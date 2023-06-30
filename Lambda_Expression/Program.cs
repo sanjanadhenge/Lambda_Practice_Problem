@@ -21,6 +21,11 @@ namespace Lambda_Expression
             Sort(Data);
             DisplayByAdress(Data, "1461");
         } 
+        public static void FetchRecords(List<Student> Data)
+        {
+            var result = Data.Take(3).ToList();
+            Display(result);
+        }
         public static void Display(List<Student> Data)
         {
             foreach (Student s in Data)
