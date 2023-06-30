@@ -20,6 +20,8 @@ namespace Lambda_Expression
             RetriveData(Data);
             Sort(Data);
             DisplayByAdress(Data, "1461");
+            FetchRecords(Data);
+            SearchByName(Data, "Sanjana");
         } 
         public static void FetchRecords(List<Student> Data)
         {
@@ -46,6 +48,11 @@ namespace Lambda_Expression
         public static void DisplayByAdress(List<Student> Data ,string Address)
         {
             var result = Data.Where(x=>x.Address.Equals(Address)).ToList();
+            Display(result);
+        }
+        public static void SearchByName(List<Student> Data, string Name)
+        {
+            var result = Data.Where(x => x.Name.Equals(Name)).ToList();
             Display(result);
         }
     }
