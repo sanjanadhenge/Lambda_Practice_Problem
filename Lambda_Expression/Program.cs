@@ -17,6 +17,9 @@ namespace Lambda_Expression
             Data.Add(new Student() { Name = "Sudha", Address = "5161", PhoneNumber = "65141555", Age = 12,TotalMarks=88});
             Data.Add(new Student() { Name = "Siya", Address = "5161", PhoneNumber = "65851455", Age = 18,TotalMarks=100 });
             Display(Data);
+            RetriveData(Data);
+            Sort(Data);
+            DisplayByAdress(Data, "1461");
         } 
         public static void Display(List<Student> Data)
         {
@@ -32,7 +35,12 @@ namespace Lambda_Expression
         }
         public static void Sort(List<Student> Data)
         {
-            var result = Data.OrderBy(x=>x.TotalMarks).ToList();  
+            var result = Data.OrderByDescending(x=>x.TotalMarks).ToList();  
+            Display(result);
+        }
+        public static void DisplayByAdress(List<Student> Data ,string Address)
+        {
+            var result = Data.Where(x=>x.Address.Equals(Address)).ToList();
             Display(result);
         }
     }
