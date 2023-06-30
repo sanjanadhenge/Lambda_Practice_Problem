@@ -24,6 +24,11 @@ namespace Lambda_Expression
             {
                 Console.WriteLine(s.Name + "\t"+s.Address+"\t"+s.PhoneNumber+"\t"+s.Age);
             }
+        } 
+        public static void RetriveData(List<Student> Data)
+        {
+            var result = Data.FindAll(x=>x.Age >=12 &&  x.Age <=18).ToList();
+            Display(result);
         }
     }
 }
