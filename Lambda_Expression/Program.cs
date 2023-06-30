@@ -12,10 +12,10 @@ namespace Lambda_Expression
         {
             List<Student> Data = new List<Student>();
 
-            Data.Add(new Student() { Name="Sanjana",Address="4161",PhoneNumber="65141455",Age=22});
-            Data.Add(new Student() { Name = "Saambhav", Address = "45261", PhoneNumber = "651495215", Age = 23 });
-            Data.Add(new Student() { Name = "Sudha", Address = "5161", PhoneNumber = "65141555", Age = 12 });
-            Data.Add(new Student() { Name = "Siya", Address = "5161", PhoneNumber = "65851455", Age = 18 });
+            Data.Add(new Student() { Name="Sanjana",Address="4161",PhoneNumber="65141455",Age=22,TotalMarks=98});
+            Data.Add(new Student() { Name = "Saambhav", Address = "45261", PhoneNumber = "651495215", Age = 23,TotalMarks=98 });
+            Data.Add(new Student() { Name = "Sudha", Address = "5161", PhoneNumber = "65141555", Age = 12,TotalMarks=88});
+            Data.Add(new Student() { Name = "Siya", Address = "5161", PhoneNumber = "65851455", Age = 18,TotalMarks=100 });
             Display(Data);
         } 
         public static void Display(List<Student> Data)
@@ -28,6 +28,11 @@ namespace Lambda_Expression
         public static void RetriveData(List<Student> Data)
         {
             var result = Data.FindAll(x=>x.Age >=12 &&  x.Age <=18).ToList();
+            Display(result);
+        }
+        public static void Sort(List<Student> Data)
+        {
+            var result = Data.OrderBy(x=>x.TotalMarks).ToList();  
             Display(result);
         }
     }
